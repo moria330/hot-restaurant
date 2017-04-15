@@ -41,7 +41,7 @@ app.get("/reservation", function(req, res) {
 // api/tables
 app.get("/api/tables", function(req, res) {
   res.writeHead(200, { "Content-Type": "text/html" });
-  res.end(JSON.strinfigy(tables)); 
+  res.end(JSON.stringify(tables)); 
 });
 
 // api/waitlist
