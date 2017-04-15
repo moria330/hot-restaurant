@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hot Restaurant</title>
+  <!-- Latest compiled and minified CSS & JS -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="text-center">
+      <span class="glyphicon glyphicon-fire"></span> HOT RESTAURANT</h1>
+      <hr>
+      <h3 class="text-center">Current waiting list and Reservations</h3>
+      <br>
+      <div class="text-center">
+        <a href="/"><button type="button" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-home"></span></button></a>
+    
+        <a href="/reserve"><button type="button" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-credit-card"></span> Make Reservation</button></a>
+
+      </div>
+
+    </div>
+  </div>
+<!-- Current Tables in Use -->
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">Current Reservations</h4>
+            <div class="panel-body" id="tableSection">
+            <!-- Panel content -->
+              <div class="well" id="tableWell">abc</div>
+ 
+            </div>
+        </div>
+      </div>
+      
+    </div>
+    
+  </div>
+
+<!-- Waiting List Panel -->
+    <div class="row">
+    <div class="col-lg-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">Waiting list</h4>
+            <div class="panel-body" id="tableSection">
+            <!-- Panel content -->
+              <div class="well" id="waitingWell">abc</div>
+
+            </div>
+        </div>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+</body>
+
+<footer>
+  <div class="container">
+    <p>
+      <a href="#" id="clear">Clear Table</a> |
+      <a href="/api/tables">API Table link</a> |
+      <a href="/api/waitlist">API waitlist</a>
+    </p>
+    
+  </div>
+</footer>
+
+
+
+
+
+</html>
