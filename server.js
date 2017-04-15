@@ -47,19 +47,16 @@ app.get("/reserve", function(req, res) {
 
 // api/tables
 app.get("/api/tables", function(req, res) {
-  res.writeHead(200, { "Content-Type": "text/html" });
-  res.end(JSON.stringify(tables)); 
+  res.json(tables);
 });
 
 // api/waitlist
 app.get("/api/waitlist", function(req, res) {
-  res.writeHead(200, { "Content-Type": "text/html" });
-  res.end(JSON.stringify(waitList)); 
+  res.json(waitList);
 });
 
 app.get("/api/pageviews", function(req, res) {
-  res.writeHead(200, { "Content-Type": "text/html" });
-  res.end(JSON.stringify(pageViews)); 
+  res.json(pageViews);
 });
 
 // Catch all in no paths from above are used.
