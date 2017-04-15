@@ -46,21 +46,21 @@
 		<form>
 		<div class="form-group">
 		  <label for="name">Name</label>
-		  <input type="text" class="form-control" id="usr">
+		  <input type="text" class="form-control" id="name">
 		</div>
 		<div class="form-group">
 		  <label for="phone">Phone Number</label>
-		  <input type="text" class="form-control" id="usr">
+		  <input type="text" class="form-control" id="phone">
 		</div>
 			<div class="form-group">
 		  <label for="email">Email</label>
-		  <input type="text" class="form-control" id="usr">
+		  <input type="text" class="form-control" id="email">
 		</div>
 			<div class="form-group">
 		  <label for="unique_id">Unique ID</label>
-		  <input type="text" class="form-control" id="usr">
+		  <input type="text" class="form-control" id="id">
 		</div>
-		<button type="button" class="btn btn-primary">Submit</button>
+		<button type="submit" class="btn btn-primary" id="submit">Submit</button>
 		</form>
       </div>
     </div>
@@ -76,6 +76,36 @@
 	</p>
 
 </footer>
+
+<script type="text/javascript">
+	 
+	var servername = location.origin;
+
+	console.log(servername);
+
+
+	$("#submit").on("click", function(event) 
+	{
+		var newReservation = 
+		{
+			"customerName": $('#name').val().trim(),
+			"phoneNumber": $('#phone').val().trim(),
+			"customerEmail": $('#email').val().trim(),
+			"customerID": $('#id').val().trim()
+		};
+
+		// Question: What does this code do??
+		$.post(servername + "/api/new", newReservation)
+		.done(function(data) 
+		{
+			console.log(data);
+		});
+	});
+
+
+</script>
+
+
 
 </body>
 </html>
