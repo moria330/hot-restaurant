@@ -41,9 +41,9 @@ app.get("/tables", function(req, res) {
 });
 
 // make reservation
-app.get("/reservation", function(req, res) {
+app.get("/reserve", function(req, res) {
    pageViews++;
-  res.sendFile(path.join(__dirname, "reservation.html"));
+  res.sendFile(path.join(__dirname, "reserve.html"));
 });
 
 // api/tables
