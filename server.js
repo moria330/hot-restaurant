@@ -22,21 +22,27 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 var tables = [];
 var waitList = [];
 
+//keep track of any page views
+var pageViews = 0;
+
 // Routes
 // =============================================================
 
 // home page
 app.get("/", function(req, res) {
+  pageViews++;
   res.sendFile(path.join(__dirname, "index.html"));
 });
 
 // view tables
 app.get("/tables", function(req, res) {
+   pageViews++;
   res.sendFile(path.join(__dirname, "tables.html"));
 });
 
 // make reservation
 app.get("/reservation", function(req, res) {
+   pageViews++;
   res.sendFile(path.join(__dirname, "reservation.html"));
 });
 
@@ -50,6 +56,11 @@ app.get("/api/tables", function(req, res) {
 app.get("/api/waitlist", function(req, res) {
   res.writeHead(200, { "Content-Type": "text/html" });
   res.end(JSON.stringify(waitList)); 
+});
+
+app.get("/api/pageviews", function(req, res) {
+  res.writeHead(200, { "Content-Type": "text/html" });
+  res.end(JSON.stringify(pageViews)); 
 });
 
 // Catch all in no paths from above are used.
